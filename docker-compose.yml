@@ -7,11 +7,14 @@ services:
     ports:
       - "8080:8080"
       - "8081:8081"
+    networks:
+      - spring-postgres
     depends_on:
       - postgres
 
   postgres:
     image: postgres:14.1
+    hostname: postgres_db
     deploy:
       mode: global    
     environment:
@@ -23,3 +26,8 @@ services:
       - "./db_init:/docker-entrypoint-initdb.d/"
     ports:
       - "5432:5432"
+    networks:
+      - spring-postgres
+
+networks:
+  spring-postgres:
