@@ -1,0 +1,25 @@
+version: "3"
+services:
+  data-service-backend:
+    container_name: data-service-backend
+    build:
+      context: ../akros-marketplace-data-service-backend
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:14.1
+    deploy:
+      mode: global    
+    environment:
+      - POSTGRES_USER=am
+      - POSTGRES_PASSWORD=am
+      - POSTGRES_DB=am
+    volumes:
+      - "./pg_data:/var/lib/postgresql/data"
+      - "./db_init:/docker-entrypoint-initdb.d/"
+    ports:
+      - "5432:5432"
