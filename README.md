@@ -43,7 +43,7 @@ To force rebuild procede the following steps
 - **show images**: docker images
 - **remove image**: docker image rm akros-marketplace-infrastructure_data-service-backend:latest
 
-## Start/Stop
+### Start/Stop
 - **start**: docker-compose -f docker-compose_rest_service_end_points_and_database.yml up
 - **stop**: docker-compose -f docker-compose_rest_service_end_points_and_database.yml down
 
