@@ -3,7 +3,7 @@ services:
   data-service-backend:
     container_name: data-service-backend
     build:
-      context: ../akros-marketplace-data-service-backend
+      context: ../../akros-marketplace-data-service-backend
     ports:
       - "8080:8080"
       - "8081:8081"
@@ -16,6 +16,7 @@ services:
 
   postgres:
     image: postgres:14.1
+    container_name: marketplace_db
     hostname: postgres_db
     deploy:
       mode: global    
