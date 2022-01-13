@@ -24,8 +24,8 @@ services:
       - POSTGRES_PASSWORD=am
       - POSTGRES_DB=am
     volumes:
-      - "./pg_data:/var/lib/postgresql/data"
-      - "./db_init:/docker-entrypoint-initdb.d/"
+      - "../pg_data:/var/lib/postgresql/data"
+      - "../db_init:/docker-entrypoint-initdb.d/"
     ports:
       - "5432:5432"
     networks:

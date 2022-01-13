@@ -1,34 +1,17 @@
-# Installing and Running Infrastructure
+# Installing and Running the Infrastructure
 
-## Database only : docker-compose_database_only.yml
+## Database only
 
-- This command runs a preconfigured PostgreSQL database.
-- This is primary used for backend developers using a database to test there Rest-Service.
+For Java-Backend-Developers start only the PostGreSQL database to develop the Rest Services.
 
-###Database Configuration
-- **user** : am
-- **passsword** : am
-- **database_name** : am
-- **host** : localhost
-- **port** : 5432
+Use 'database_only' folder configuration.
 
-###PostgreSQL Data Files / Reinitialize Database
+## Rest-Services
 
-The data files are stored in sub directory ./pg_data. This directory is once created on first run and installs the required tables, views and initializes the data.
+For Frontend-Developers start the the PostGreSQL database and the Rest Services to develop the frontend functionality.
 
-To rebuild the database, shut the database down and delete the ./pg_data directory. On next start the database will be reinitialized again.
+Use 'restservice' folder configuration.
 
-###Start/Stop
-- **start**: docker-compose -f docker-compose_database_only.yml up
-- **stop**: docker-compose -f docker-compose_database_only.yml down
-
-
-
-
-## Rest-Services : docker-compose_rest_service_end_points_and_database.yml
-
-- This command runs the preconfigured PostgreSQL database described in previous section.
-- This is primary used for frontend developers testing frontend to Rest-Service-End-Point communication.
 
 ###Rest-Service-End-Point Configuration
 - **host** : localhost
